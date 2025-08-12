@@ -848,9 +848,9 @@ function updateDeliveryPrices(homePrice, stopdeskPrice) {
 
 // Product prices
 const productPrices = {
-    'bag': 3500,
-    'cropTop': 3000,
-    'both': 6000
+    'bag': 2500,
+    'top': 3000,
+    'both': 5000  // Updated to 5000 DA for the bundle
 };
 
 // Update delivery price based on selected wilaya and delivery method
@@ -953,11 +953,11 @@ function updateOrderSummary(deliveryPrice = 0) {
             </div>
             <div class="order-summary-item">
                 <span>Crop Top</span>
-                <span>${productPrices.cropTop} DA</span>
+                <span>${productPrices.top} DA</span>
             </div>
             <div class="order-summary-item" style="font-weight: bold; color: #b47b84;">
                 <span>Réduction pour l'ensemble</span>
-                <span>-${(productPrices.bag + productPrices.cropTop - productPrices.both)} DA</span>
+                <span>-${(productPrices.bag + productPrices.top - productPrices.both)} DA</span>
             </div>
             <div class="order-summary-item" style="border-top: 1px solid #eee; margin-top: 5px; padding-top: 5px;">
                 <span>Total articles</span>
