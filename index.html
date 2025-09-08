@@ -3,195 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crochettle - Handmade Crochet Products</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Crochette Store - Unique Crochet Treasures</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Header will be loaded here by JavaScript -->
     <div id="header"></div>
-
-    <main>
-        <section class="product-section">
-            <h1>Crochet Bag & Crop Top Set</h1>
-            <p class="product-description">Handmade with love. Choose one or both items. Get a discount when ordering both together!</p>
-            
-            <div class="product-gallery">
-                <div class="product-image active">
-                    <img src="images/product-set-1.jpg" alt="Crochet Bag and Crop Top Set - Front View">
-                </div>
-                <div class="product-image">
-                    <img src="images/product-set-2.jpg" alt="Crochet Bag and Crop Top Set - Side View">
-                </div>
-                <div class="product-image">
-                    <img src="images/product-set-3.jpg" alt="Crochet Bag and Crop Top Set - Detail View">
-                </div>
-                <div class="gallery-nav">
-                    <button class="gallery-nav-btn prev" aria-label="Previous image">❮</button>
-                    <div class="gallery-dots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
+    <!-- Home Page -->
+    <main id="home" class="page-section active">
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Crochette Treasures</h1>
+                    <p class="hero-subtitle">One-of-a-kind pieces, crafted with love</p>
+                    <p class="hero-description">
+                        Welcome to Crochette Store, where every piece tells its own story. Each item in our collection is completely unique - when it's gone, it's gone forever. From intricate bags to cozy accessories, discover handcrafted crochet treasures that no one else will ever own.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="shop.html" class="cta-button primary" onclick="showPage('products')">
+                            <i class="fas fa-gem"></i> Shop Unique Pieces
+                        </a>
+                        <a href="https://patterns-by-maroua-dcte.vercel.app/" target="_blank" class="cta-button secondary">
+                            <i class="fas fa-book"></i> Get Patterns
+                        </a>
                     </div>
-                    <button class="gallery-nav-btn next" aria-label="Next image">❯</button>
                 </div>
             </div>
-            
-            <div class="pricing">
-                <div class="price-item">
-                    <span>Bag:</span>
-                    <span class="price">2500 DA</span>
+        </section>
+
+        <div class="exclusivity-banner">
+            <div class="container">
+                <h3><i class="fas fa-crown"></i> Exclusive Collection</h3>
+                <p>Every piece exists only once. When sold, it becomes part of our archive - proof of its unique journey.</p>
+            </div>
+        </div>
+
+        <!-- Featured Available Products -->
+        <section class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Currently Available</h2>
+                    <p>These one-of-a-kind pieces are waiting for their perfect owner</p>
                 </div>
-                <div class="price-item">
-                    <span>Crop Top:</span>
-                    <span class="price">3000 DA</span>
+                <div class="products-grid" id="featuredProducts">
+                    <!-- Products will be loaded here -->
                 </div>
-                <div class="price-item highlight">
-                    <span>Set (both):</span>
-                    <span class="price">5000 DA <span class="original-price">5500 DA</span></span>
-                    <span class="discount-tag">Save 500 DA!</span>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="shop.html" class="cta-button primary" onclick="showPage('products')">View All Available Pieces</a>
                 </div>
             </div>
-            
-            <button id="orderNowBtn" class="cta-button">Order Now</button>
-        </section>
-
-        <section id="orderForm" class="order-form-section">
-            <h2>Place Your Order</h2>
-            <form id="crochetOrderForm" action="https://formspree.io/f/xqalgpwd" method="POST">
-                <div class="form-group">
-                    <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input type="text" id="fullName" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="instagram">Instagram Username <span class="required">*</span></label>
-                    <div class="input-with-icon">
-                        <span>@</span>
-                        <input type="text" id="instagram" name="instagram" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>What do you want to order? <span class="required">*</span></label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="orderItems" value="bag"> Bag
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="orderItems" value="top"> Crop Top
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="orderItems" value="both" id="bothItems"> Both (Save 500 DA!)
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-group" id="bagColorGroup">
-                    <label for="bagColor">Color of the Bag</label>
-                    <input type="text" id="bagColor" name="bagColor">
-                </div>
-                
-                <div class="form-group" id="topColorGroup">
-                    <label for="topColor">Color of the Crop Top</label>
-                    <input type="text" id="topColor" name="topColor">
-                </div>
-                
-                <div class="form-group">
-                    <label for="wilaya">Wilaya <span class="required">*</span></label>
-                    <select id="wilaya" name="wilaya" required>
-                        <option value="" disabled selected>Sélectionnez votre wilaya</option>
-                    </select>
-                    <div id="deliveryPrice" class="delivery-price" style="display: none; margin-top: 10px; font-weight: bold; color: #b47b84;">
-                </div>
-                
-                <div class="form-group" id="communeGroup" style="display: none;">
-                    <label for="commune">Commune <span class="required">*</span></label>
-                    <select id="commune" name="commune" required disabled>
-                        <option value="" disabled selected>Sélectionnez votre commune</option>
-                    </select>
-                </div>
-                
-                <div class="form-group" id="deliveryTypeGroup" style="display: none;">
-                    <label>Type de livraison <span class="required">*</span></label>
-                    <div class="delivery-options">
-                        <label class="delivery-option">
-                            <input type="radio" name="delivery_method" value="home" required>
-                            <span class="delivery-label">
-                                <span class="delivery-icon">📦</span>
-                                <span class="delivery-text">Livraison à domicile</span>
-                                <span class="delivery-price" id="homeDeliveryPrice"></span>
-                            </span>
-                        </label>
-                        <label class="delivery-option">
-                            <input type="radio" name="delivery_method" value="office" required>
-                            <span class="delivery-label">
-                                <span class="delivery-icon">🏤</span>
-                                <span class="delivery-text">Livraison au bureau (Stop Desk)</span>
-                                <span class="delivery-price" id="stopDeskPrice"></span>
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                
-                <input type="hidden" id="deliveryPriceValue" name="delivery_price" value="0">
-                
-                <div class="form-group">
-                    <label for="message">Optional Message</label>
-                    <textarea id="message" name="message" rows="3"></textarea>
-                </div>
-                
-                <div id="discountMessage" class="discount-message">
-                    🎉 You'll get 500 DA off!
-                </div>
-                
-                <!-- Order Summary -->
-                <div class="order-summary">
-                    <h3>Récapitulatif de la commande</h3>
-                    <div id="orderItemsSummary">
-                        <!-- Will be populated by JavaScript -->
-                    </div>
-                    <div class="order-summary-item">
-                        <span>Frais de livraison:</span>
-                        <span id="deliveryCostSummary">0 DA</span>
-                    </div>
-                    <div class="order-summary-total">
-                        <span>Total:</span>
-                        <span id="orderTotal">0 DA</span>
-                        <input type="hidden" id="orderTotalValue" name="total_amount" value="0">
-                    </div>
-                </div>
-                
-                <button type="submit" class="submit-button">Place Order</button>
-            </form>
-        </section>
-
-        <section class="pattern-section">
-            <h2>Want the pattern?</h2>
-            <p>Check out our collection of crochet patterns to make your own creations!</p>
-            <a href="https://patterns-by-maroua-dcte.vercel.app/" target="_blank" class="pattern-link">
-                Get Patterns <i class="fas fa-arrow-right"></i>
-            </a>
         </section>
     </main>
 
-    <!-- Footer will be loaded here by JavaScript -->
     <div id="footer"></div>
-
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

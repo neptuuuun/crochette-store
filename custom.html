@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Requestt</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header"></div>
+    <!-- Custom Request Page -->
+    <section id="request" class="page-section active">
+        <div class="hero-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Custom Request</h1>
+                    <p>Describe your dream piece and I'll bring it to life - along with the pattern for you to learn</p>
+                </div>
+            </div>
+        </div>
+        <section class="request-section">
+            <div class="container">
+                <form class="request-form" id="customRequestForm" action="https://formspree.io/f/mnnblgyb" method="POST">
+                    <div class="success-message" id="requestSuccessMessage">
+                        <h3>Request Submitted Successfully!</h3>
+                        <p>Thank you for your custom request. I'll review your description and get back to you within 2-3 days with a quote and timeline.</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="requestName">Your Name <span class="required">*</span></label>
+                            <input type="text" id="requestName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requestEmail">Email <span class="required">*</span></label>
+                            <input type="email" id="requestEmail" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="requestPhone">Phone</label>
+                            <input type="tel" id="requestPhone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="requestInstagram">Instagram</label>
+                            <input type="text" id="requestInstagram" name="instagram" placeholder="@username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemType">Type of Item <span class="required">*</span></label>
+                        <select id="itemType" name="itemType" required>
+                            <option value="">Select item type</option>
+                            <option value="bag">Bag/Purse</option>
+                            <option value="clothing">Clothing (Top/Cardigan/etc.)</option>
+                            <option value="accessory">Accessory (Hat/Scarf/etc.)</option>
+                            <option value="home-decor">Home Decor</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemDescription">Type of Custom Item <span class="required">*</span></label>
+                        <textarea id="itemDescription" name="customItemType" rows="4" placeholder="Describe what you'd like me to create - colors, style, size, special features, inspiration, etc. The more details, the better I can bring your vision to life!" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="photoReferenceOption">Do You Have a Photo Reference?</label>
+                    <select id="photoReferenceOption" name="photoReferenceOption" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="colorPreference">Colors/Preferences</label>
+                        <input type="text" id="colorPreference" name="colorsPreferences" placeholder="e.g., soft pastels, ocean blues, earthy tones">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customWilaya">Wilaya <span class="required">*</span></label>
+                            <select id="customWilaya" name="wilaya" required>
+                                <option value="">Choisir une wilaya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="customCommune">Commune <span class="required">*</span></label>
+                            <select id="customCommune" name="commune" required>
+                                <option value="">Choisir d'abord une wilaya</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customDeliveryType">Delivery Type <span class="required">*</span></label>
+                        <div class="delivery-options">
+                            <label class="delivery-option">
+                                <input type="radio" name="deliveryType" value="home" required>
+                                <span class="delivery-icon">📦</span>
+                                <span class="delivery-text">Livraison à domicile</span>
+                                <span class="delivery-price" id="customHomePrice">-</span>
+                            </label>
+                            <label class="delivery-option">
+                                <input type="radio" name="deliveryType" value="office" required>
+                                <span class="delivery-icon">🏤</span>
+                                <span class="delivery-text">Livraison au bureau</span>
+                                <span class="delivery-price" id="customOfficePrice">-</span>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="additionalNotes">Optional Message</label>
+                        <textarea id="additionalNotes" name="optionalMessage" rows="3" placeholder="Any other details, references, or special requests?"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i> Submit Custom Request
+                    </button>
+                </form>
+            </div>
+        </section>
+    </section>
+
+    <div id="footer"></div>
+    <script src="js/wilaya-data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Initialize custom form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const wilayaSelect = document.getElementById('customWilaya');
+            const communeSelect = document.getElementById('customCommune');
+            const deliveryOptions = document.querySelectorAll('input[name="deliveryType"]');
+            const form = document.getElementById('customRequestForm');
+
+            // Populate wilaya select
+            populateWilayaSelect(wilayaSelect);
+
+            // Handle wilaya change
+            wilayaSelect.addEventListener('change', function() {
+                const selectedWilaya = this.value;
+                
+                if (selectedWilaya) {
+                    populateCommuneSelect(communeSelect, selectedWilaya);
+                    updateCustomDeliveryPrices(selectedWilaya);
+                    communeSelect.disabled = false;
+                } else {
+                    communeSelect.innerHTML = '<option value="">Choisir d\'abord une wilaya</option>';
+                    communeSelect.disabled = true;
+                    resetCustomDeliveryPrices();
+                }
+            });
+
+            // Handle delivery type change
+            deliveryOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    // Update visual selection
+                    document.querySelectorAll('.delivery-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.closest('.delivery-option').classList.add('selected');
+                });
+            });
+
+            function updateCustomDeliveryPrices(wilayaCode) {
+                const prices = getDeliveryPrices(wilayaCode);
+                document.getElementById('customHomePrice').textContent = prices.home + ' DA';
+                document.getElementById('customOfficePrice').textContent = prices.office + ' DA';
+            }
+
+            function resetCustomDeliveryPrices() {
+                document.getElementById('customHomePrice').textContent = '-';
+                document.getElementById('customOfficePrice').textContent = '-';
+            }
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                
+                // Submit to Formspree
+                fetch('https://formspree.io/f/mnnblgyb', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        document.getElementById('requestSuccessMessage').classList.add('show');
+                        
+                        // Hide form
+                        const formElements = this.querySelectorAll('input:not([type="hidden"]), textarea, button, select');
+                        formElements.forEach(element => {
+                            element.style.display = 'none';
+                        });
+                        
+                        // Auto reset after 5 seconds
+                        setTimeout(() => {
+                            this.reset();
+                            document.getElementById('requestSuccessMessage').classList.remove('show');
+                            formElements.forEach(element => {
+                                element.style.display = '';
+                            });
+                            resetCustomDeliveryPrices();
+                        }, 5000);
+                    } else {
+                        alert('There was an error submitting your request. Please try again.');
+                    }
+                }).catch(error => {
+                    alert('There was an error submitting your request. Please try again.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

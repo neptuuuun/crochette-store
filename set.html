@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handmade Crochet Bag - Crochettle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div> 
+
+    <main>
+        <section class="product-section">
+            <div class="container">
+                <div class="product-container">
+                    <!-- Product Gallery -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img src="images/product-set-1.jpg" alt="pencil-case" id="mainProductImage">
+                        </div>
+                        <div class="thumbnail-gallery">
+                            <div class="thumbnail active">
+                                <img src="images/product-set-1.jpg" alt="pencil-case">
+                            </div>
+                            <div class="thumbnail active">
+                                <img src="images/product-set-2.jpg" alt="pencil-case">
+                            </div>
+                            <div class="thumbnail">
+                                <img src="images/product-set-3.jpg" alt="pencil-case-2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <div class="availability-badge">
+                            <i class="fas fa-star"></i>
+                            Only 1 Available - Unique Piece
+                        </div>
+
+                        <h1 class="product-title">Crochet Bag & Crop Top Set</h1>
+                        <div class="product-price">5000 DA</div>
+
+                        <div class="product-story">
+                            <div class="story-title">
+                                <i class="fas fa-heart"></i>
+                                The Story Behind This Set
+                            </div>
+                            <div class="story-content">
+                                This matching set was created to bring together the charm of handmade crochet with a touch of fashion. 
+                                The crop top is designed to be light, comfortable, and stylish, while the matching bag adds both practicality 
+                                and a unique artisanal flair. Each piece is crocheted with care to highlight the beauty of the craft, making 
+                                this set perfect for sunny days, outings, or simply standing out with an elegant handmade look. 
+                                It’s not just clothing and an accessory—it’s a statement of creativity and individuality.
+                            </div>
+                        </div>
+
+                        <div class="product-details">
+                            <div class="details-title">
+                                <i class="fas fa-info-circle"></i>
+                                Product Details
+                            </div>
+                            <ul class="details-list">
+                                <li>
+                                    <span class="detail-label">Includes:</span>
+                                    <span class="detail-value">1 handmade crochet crop top + 1 matching crochet bag</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Material:</span>
+                                    <span class="detail-value">High-quality cotton yarn</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Fit:</span>
+                                    <span class="detail-value">Comfortable & breathable, ideal for summer wear</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Bag Style:</span>
+                                    <span class="detail-value">Lightweight, sturdy, and roomy for daily essentials</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Care Instructions:</span>
+                                    <span class="detail-value">Hand wash with cold water, lay flat to dry</span>
+                                </li>
+                                <li>
+                                    <span class="detail-label">Made in:</span>
+                                    <span class="detail-value">Algeria</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="cta-button primary" onclick="openOrderModal()">
+                                <i class="fas fa-shopping-cart"></i>
+                                Order This Unique Piece
+                            </button>
+                            <a href="https://patterns-by-maroua-dcte.vercel.app/" target="_blank" class="cta-button secondary">
+                                <i class="fas fa-pattern"></i>
+                                Request the Pattern
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exclusivity Banner -->
+        <section class="exclusivity-section">
+            <div class="container">
+                <div class="exclusivity-content">
+                    <h3><i class="fas fa-crown"></i>One-of-a-Kind Guarantee</h3>
+                    <p>Each piece is unique and will never be recreated. When it's gone, it's gone forever.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h2>Order Your Unique Piece</h2>
+            
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Order Submitted Successfully!</h3>
+                <p>Thank you for your order. We'll contact you soon to confirm the details.</p>
+            </div>
+
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram">Instagram Username</label>
+                    <input type="text" id="instagram" name="instagram" placeholder="@your_username">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Shipping Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="3" required placeholder="Please provide your complete address including wilaya"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Special Instructions (Optional)</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Any special requests or questions?"></textarea>
+                </div>
+
+                <input type="hidden" name="productName" value="Crochet Bag & Crop Top Set">
+                <input type="hidden" name="productPrice" value="5000 DA">
+
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Order
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Image gallery functionality
+        const thumbnails = document.querySelectorAll('.thumbnail img');
+        const mainImage = document.getElementById('mainProductImage');
+
+        thumbnails.forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                // Update main image src
+                mainImage.src = thumb.src;
+                mainImage.alt = thumb.alt;
+
+                // Update active thumbnail styling
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                thumb.parentElement.classList.add('active');
+            });
+        });
+
+        // Modal functionality
+        function openOrderModal() {
+            document.getElementById('orderModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeOrderModal() {
+            document.getElementById('orderModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('orderModal');
+            if (event.target === modal) {
+                closeOrderModal();
+            }
+        });
+
+        // Form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+            
+            // Hide form
+            const formElements = this.querySelectorAll('input, textarea, button');
+            formElements.forEach(element => {
+                if (element.type !== 'hidden') {
+                    element.style.display = 'none';
+                }
+            });
+            
+            // Auto close modal after 3 seconds
+            setTimeout(() => {
+                closeOrderModal();
+                // Reset form
+                this.reset();
+                document.getElementById('successMessage').classList.remove('show');
+                formElements.forEach(element => {
+                    element.style.display = '';
+                });
+            }, 3000);
+        });
+
+        // Add loading animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loading');
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

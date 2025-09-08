@@ -1,22 +1,24 @@
+<!-- Header -->
 <header class="main-header">
     <div class="container">
-        <div class="header-left">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Crochettle Logo" class="logo">
+        <div class="header-content">
+            <a href="index.html" class="logo" onclick="showPage('home')">
+                <img src="images/logo.png" alt="Crochette Store Logo" />
             </a>
-            <div class="mobile-menu-btn">
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" onclick="showPage('home')">Home</a></li>
+                    <li><a href="shop.html" onclick="showPage('products')">Available Now</a></li>
+                    <li><a href="custom.html" onclick="showPage('request')">Custom Request</a></li>
+                    <li><a href="https://patterns-by-maroua-dcte.vercel.app/" target="_blank">Pattern Library</a></li>
+                </ul>
+            </nav>
+
+            <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
     </div>
 </header>

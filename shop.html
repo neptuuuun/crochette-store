@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Crochettle | Handmade Crochet Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header will be loaded here by JavaScript -->
+    <div id="header"></div>
+    <main>
+        <!-- Shop Header -->
+        <section class="shop-header">
+            <div class="container">
+                <h1>Available Now</h1>
+                <p>One-of-a-kind pieces ready for their forever homes</p>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid" id="productsGrid">
+                    <!-- Crochet Bag & Crop Top Set -->
+                    <div class="product-card" data-category="sets" data-price="5000" data-name="Crochet Bag & Crop Top Set">
+                        <div class="product-badge">Save 500 DA!</div>
+                        <div class="product-image-container">
+                            <img src="images/product-set-2.jpg" alt="Crochet Bag & Crop Top Set" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3>Crochet Bag & Crop Top Set</h3>
+                            <p class="product-description">Stylish matching set perfect for summer outings. Handcrafted with premium yarn in beautiful coordinating colors.</p>
+                            <div class="product-price">
+                                <span class="current-price">5000 DA</span>
+                                <span class="original-price">5500 DA</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="set.html" class="product-btn primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alternative Set Design -->
+                    <div class="product-card" data-category="sets" data-price="5000" data-name="Elegant Crochet Set">
+                        <div class="product-image-container">
+                            <img src="images/eren.jpg" alt="Elegant Crochet Set" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3>Eren Yeager Amigurumi</h3>
+                            <p class="product-description">Sophisticated design with intricate patterns. Perfect for special occasions and everyday elegance.</p>
+                            <div class="product-price">
+                                <span>2000 DA</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="erenyeager.html" class="product-btn primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Crochet Tools Kit -->
+                    <div class="product-card" data-category="tools" data-price="3100" data-name="Professional Crochet Tools Kit">
+                        <div class="product-image-container">
+                            <img src="images/tools-kit-1.jpg" alt="Professional Crochet Tools Kit" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3>Professional Crochet Tools Kit</h3>
+                            <p class="product-description">Complete set of professional crochet tools. Everything you need to start your crochet journey or upgrade your toolkit.</p>
+                            <div class="product-price">
+                                <span class="current-price">3100 DA</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="tools-kit.html" class="product-btn primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Starter Box -->
+                    <div class="product-card" data-category="kits" data-price="2500" data-name="Crochet Starter Box">
+                        <div class="product-image-container">
+                            <img src="images/starter-box.jpg" alt="Crochet Starter Box" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h3>Crochet Starter Box</h3>
+                            <p class="product-description">Perfect for beginners! Includes basic tools, yarn samples, and easy-to-follow patterns to get you started.</p>
+                            <div class="product-price">
+                                <span class="current-price">1900 DA</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="bigenner-box.html" class="product-btn primary">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="noProducts" class="no-products" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters to see more products.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patterns Section -->
+        <section class="pattern-section">
+            <div class="container">
+                <h2>Want to Learn?</h2>
+                <p>Discover our collection of crochet patterns and learn to create your own beautiful pieces!</p>
+                <a href="https://patterns-by-maroua-dcte.vercel.app/" target="_blank" class="pattern-link">
+                    Get Patterns <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+                    
+    <div id="footer"></div>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>
